@@ -1,0 +1,136 @@
+body{
+    height: 3000px;
+}
+
+.header{
+    background-color: rgb(27, 27, 27);
+    color: white;
+    height:70px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position:fixed;
+    top: 0px;
+    left:0px;
+    right:0px;
+}
+
+.left{
+    flex-shrink: 0;
+}
+a .Amazon-home-logo{
+    width:130px;
+    margin-top:5px;
+    margin-left:15px;
+    border:1px solid transparent;
+    padding:10px;
+    border-radius:5px;
+    transition: all 0.3s;
+}
+
+.Amazon-home-logo:hover{
+  border: 1px solid white;
+}
+
+.middle{
+    display:flex;
+    align-items:center;
+     flex: 1;
+     transition:all 0.3s;
+}
+
+.middle .header-input{
+     flex: 1;
+     border:none;
+     font-size: 20px;
+     padding: 12px 25px;
+     border-top-left-radius:7px;
+     border-bottom-left-radius:7px;
+     height:27px;
+}
+
+.header-input:focus{
+    outline:3px solid #f99d25;
+}
+
+.header-searchbtn{
+    height:51px;
+    padding:10px 15px;
+    background-color:#febd69;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    border-top-right-radius:7px;
+    border-bottom-right-radius:7px;
+}
+
+.header-searchbtn img{
+    width:25px;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-rtrn-ordr{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color:white;
+    border: 1px solid transparent;
+    padding:10px;
+    transition: all 0.3s;
+}
+
+.header-rtrn-ordr:hover{
+    border: 1px solid white;
+    
+}
+
+
+.header-rtrn-ordr .Returns{
+    font-size:17px;
+    
+   
+}
+
+.header-rtrn-ordr .Orders{
+    font-size: 17px;
+    font-weight:600;   
+}
+
+.cart{
+    display:flex;
+    align-items: center;
+    margin-right:15px;
+    text-decoration:none;
+    color:white;
+    position:relative;
+    border: 1px solid transparent;
+    padding:9.5px;
+    transition:all 0.3s;
+}
+
+.cart:hover{
+    border: 1px solid white;
+}
+
+.cart-img{
+    width:55px;
+}
+
+ .cart-quantity{
+    color: #f99d25;
+    font-size:23px;
+    position:absolute;
+    left:35px;
+    bottom:22px;
+}
+
+.cart-text{
+    font-size:18px;
+    font-weight:600;
+}
+
