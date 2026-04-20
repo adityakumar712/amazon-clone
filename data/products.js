@@ -656,5 +656,38 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
+  },
+  {
+    id: "id1",
+    image : "images/products/backpack.jpg",
+    name : "School bag for children or Mens",
+    rating :{
+      stars :4.0,
+      count :2456,
+    },
+    priceCents : 2987,
+    keywords:[
+      "bag",
+      "school bag",
+      "bag for children",
+      "collegebag"
+    ]
+  },
+
+  {
+     id: "id2",
+    image : "images/products/umbrella.jpg",
+    name : "Umbrella for rainy season",
+    rating :{
+      stars :4.5,
+      count :2476,
+    },
+    priceCents : 3087,
+    keywords:[
+      "umbrella",
+      "rainy umbrella",
+      "summer umbrella",
+      "small umbrella"
+    ]
+  },
 ];
