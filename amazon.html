@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Practice</title>
+    <title>Amazon Project</title>
 
     <!-- This code is needed for responsive design to work.
       (Responsive design = make the website look good on
@@ -45,32 +45,24 @@
 
         <a class="cart-link header-link" href="checkout.html">
           <img class="cart-icon" src="images/icons/cart-icon.png">
-          <div class="cart-quantity js-cart-quantity">0</div>
+          <div class="cart-quantity">3</div>
           <div class="cart-text">Cart</div>
         </a>
       </div>
     </div>
     
     <div class="main">
-      <div class="products-grid js-products-grid">
-      <!-- //we create all the products by js using this technique
-                 first save data 
-                 then loop through array 
-                 and save a variable 
-                 by ussing the dom fetch the js-products-grid
-                 and use innerHTML inside this stote the variable
-                 (look at the amazon.js);-->
+      <div class="products-grid js-grid">
+        
+
+        
+
+       
       </div>
     </div>
 
 
-    <!--This is for cart-->
-    <script src="./data/cart.js"></script>
-
-    <!--this js file has list od product this html file first craete the list of product(array) and then use the next js file.-->
     <script src="./data/products.js"></script>
-
-   <!-- this javascript file loop through the product and add on the js-products-grid(generate html) which look on the screen.-->
-    <script src="./scripts/amazon.js"></script>
+    <script src="./javascript/amazon.js"></script>
   </body>
 </html>

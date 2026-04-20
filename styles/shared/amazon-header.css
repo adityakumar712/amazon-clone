@@ -3,9 +3,11 @@
   color: white;
   padding-left: 15px;
   padding-right: 15px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -58,7 +60,7 @@
 }
 
 .amazon-header-middle-section {
-  flex:1 ;
+  flex: 1;
   max-width: 850px;
   margin-left: 10px;
   margin-right: 10px;
