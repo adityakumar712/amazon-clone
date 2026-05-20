@@ -43,7 +43,7 @@ products.forEach((products)=>{
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-pop-msg-${products.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -60,6 +60,8 @@ products.forEach((products)=>{
 
 document.querySelector('.js-grid').innerHTML = productsHtml;
 
+
+let timeoutId;
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
     button.addEventListener('click', ()=>{
         const productId = button.dataset.productId;
@@ -96,6 +98,16 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
         });
 
         document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
+        const message = document.querySelector(`.js-pop-msg-${productId}`);
+
+        message.classList.add('active');
+
+        clearTimeout(message.timeoutId);
+        message.timeoutId = setTimeout(()=>{
+        message.classList.remove('active');
+        },2000);
+        
         
        
         
