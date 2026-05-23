@@ -91,7 +91,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
 
 
 //function for updating the cart quantity in the header.
-function updateCartQuantity(){
+ function updateCartQuantity(){
    let cartQuantity = 0;
         cart.forEach((item)=>{
             cartQuantity+=item.quantity;
@@ -100,3 +100,5 @@ function updateCartQuantity(){
 
         document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
+
+updateCartQuantity();

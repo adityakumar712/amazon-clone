@@ -43,7 +43,7 @@ export function addToCart(productId, selectorQunatityValue){
 }
 
 
-export function removeFromCart(productId){
+export function removeFromCart(productId , updateCartQuantity){
     const newCart = [];
 
     cart.forEach((cartItem)=>{
@@ -55,5 +55,36 @@ export function removeFromCart(productId){
 
     cart = newCart;
     saveToStorage();
+    updateCartQuantity();
 }
 
+
+export function calculateCartQuantity(){
+ let cartQuantity = 0;
+
+cart.forEach((cartItem)=>{
+  cartQuantity+=cartItem.quantity;
+
+});
+
+return cartQuantity;
+
+}
+
+
+
+export function updateQuantity(productId , newQuantity){
+    let matchingItem;
+
+    cart.forEach((cartItem)=>{
+        if(cartItem.productId === productId){
+            matchingItem = cartItem;
+        }
+
+    });
+
+    matchingItem.quantity = newQuantity;
+    saveToStorage();
+
+    
+}
