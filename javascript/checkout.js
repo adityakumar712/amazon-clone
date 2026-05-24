@@ -7,7 +7,8 @@ import {deliveryOptions} from '../javascript/deliveryOption.js';
 
 
 
-
+function renderOrderSummary()
+{
 let cartItemsHtml = '';
 cart.forEach((cartItem)=>{
 
@@ -91,7 +92,7 @@ cart.forEach((cartItem)=>{
 });
 
 function deliveryOptionsHtml(matchingProduct  , cartItem){
-  let html;
+  let html = '';
 
   deliveryOptions.forEach((deliveryOption)=>{
     const today = dayjs();
@@ -205,5 +206,10 @@ document.querySelectorAll('.js-delivery-option').forEach((element)=>{
     //shorthand for the above code
     const {productId , deliveryOptionId} = element.dataset;
     updateDeliveryOption(productId , deliveryOptionId);
+    renderOrderSummary();
   });
 });
+
+}
+
+renderOrderSummary();
