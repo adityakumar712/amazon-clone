@@ -60,7 +60,29 @@ class Clothing extends Product{
    }
 }
 
+// //jS provide many built in classes like Date and Array.
+// const date = new Date();
+// console.log(date);
+// console.log(date.getDate());
+// console.log(date.getMonth()+1);
+// console.log(date.getFullYear());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
+// console.log(date.getDay());
 
+// const objects2 = {
+//   a:1,
+//   b:this.a,
+// };
+
+// console.log(this);
+
+// function logThis(this){
+//   console.log(this);
+// }
+// logThis();
+// logThis.call('Aditya');
 
 export const products = [
   {
