@@ -124,7 +124,7 @@ document.querySelectorAll('.js-dlt-link').forEach((link)=>{
     const productId = link.dataset.productId;
     removeFromCart(productId , updateCartQuantity);
    
-    rendderCheckoutHeader();
+    renderCheckoutHeader();
     renderPaymentSummary();
     renderOrderSummary();
   });
@@ -154,7 +154,7 @@ document.querySelectorAll('.js-update-quantity-link').forEach((updatelink)=>{
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
 
     container.classList.add('is-editing-quantity');
-  
+    
     
   });
 
@@ -180,9 +180,13 @@ document.querySelectorAll('.js-save-link').forEach((savelink)=>{
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
     container.classList.remove('is-editing-quantity');
 
-    const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
-    quantityLabel.innerHTML = newQuantity;
-    updateCartQuantity();
+    // const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
+    // quantityLabel.innerHTML = newQuantity;
+    // updateCartQuantity();
+
+    renderOrderSummary();
+    renderPaymentSummary();
+    renderCheckoutHeader();
   });
 });
 
