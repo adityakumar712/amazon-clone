@@ -793,7 +793,7 @@ export let products =[];
 
 export function loadProducts(fun){
   const xhr = new XMLHttpRequest;
-
+  console.log('load products');
   xhr.addEventListener('load' , ()=>{
     products = JSON.parse(xhr.response).map((productDetails)=>{
 
