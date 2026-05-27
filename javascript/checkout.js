@@ -60,7 +60,7 @@ import { loadCart } from '../data/cart.js';
 
 
 // we can run only one promise at a time. but now we can run multiple promises at a time by using promise.all().
-
+/*
 Promise.all([
    loadProductsFetch(),
     new Promise((resolve)=>{
@@ -75,3 +75,28 @@ Promise.all([
         renderOrderSummary();
         renderPaymentSummary();
     })
+
+*/
+  
+ 
+//Now we are using Async it is a better way to handle the asynchronous code.
+//it reduces the code from promises like writing new promise()
+//and writing resolve().
+
+async function loadPage(){
+
+    await loadProductsFetch();
+
+    await new Promise((resolve)=>{
+        loadCart(()=>{
+            resolve('value2');
+        });
+ });
+
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+
+}
+
+loadPage();
