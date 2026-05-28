@@ -122,7 +122,7 @@ export function loadCart(fun){
 
 xhr.addEventListener('load' , ()=>{
    
-
+console.log(xhr.response);
  fun();
 
  

@@ -792,7 +792,7 @@ export const products = [
 //here we use fetch to send the request to server by using Promise.
 //fetch ->> uses promise
 
-export let products =[];
+ export let products =[];
 
 export function loadProductsFetch(){
   const promise = fetch('https://supersimplebackend.dev/products').then((response)=>{
@@ -806,7 +806,10 @@ export function loadProductsFetch(){
       return new Product(productDetails);
  });
 
+ console.log('load products');
 
+  }).catch((error)=>{
+    console.log('Unexpected error. please try again later');
   });
 
   return promise;
@@ -824,34 +827,36 @@ export function loadProductsFetch(){
 
 
 
-//backend code for requesting products using XMLHttpRequest that uses callback.
-//XMLHttpRequest -->> uses callback
-// export let products =[];
+// backend code for requesting products using XMLHttpRequest that uses callback.
+// XMLHttpRequest -->> uses callback
 
-// export function loadProducts(fun){
-//   const xhr = new XMLHttpRequest;
+export function loadProducts(fun){
+  const xhr = new XMLHttpRequest;
   
-//   xhr.addEventListener('load' , ()=>{
-//     products = JSON.parse(xhr.response).map((productDetails)=>{
+  xhr.addEventListener('load' , ()=>{
+    products = JSON.parse(xhr.response).map((productDetails)=>{
 
-//   if(productDetails.type === "clothing"){
-//     return new Clothing(productDetails);
-//   }
-//   return new Product(productDetails);
-//  });
+  if(productDetails.type === "clothing"){
+    return new Clothing(productDetails);
+  }
+  return new Product(productDetails);
+ });
 
-//  console.log('load products');
+ console.log('load products');
 
-//  fun();
-
- 
-
-// });
+ fun();
 
 
-//   xhr.open('GET' , 'https://supersimplebackend.dev/products');
-//   xhr.send();
-// }
+});
+
+xhr.addEventListener('error' , (error)=>{
+  console.log('Unexpected error. please try again later');
+})
+
+
+  xhr.open('GET' , 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
 
 
 

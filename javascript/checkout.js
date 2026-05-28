@@ -84,14 +84,31 @@ Promise.all([
 //and writing resolve().
 
 async function loadPage(){
+    try{
+        //we can mannually create error by using throw inside try block.
+       // throw 'error1';
+        await loadProductsFetch();
 
-    await loadProductsFetch();
+      const value =  await new Promise((resolve , reject)=>{
 
-    await new Promise((resolve)=>{
+        // throw 'error2';
+
+
+        //now we learn to create error in promise using another way
+        // that is reject  itmethod that is used as a parameter.
+        //it is a error that run in future so we can not do this with 
+        // throw.
         loadCart(()=>{
+            // reject('erorr3');
             resolve('value2');
         });
- });
+    });
+
+    }catch(error){
+        console.log('Unexpected error. please try again later');
+    }
+
+    
 
         renderCheckoutHeader();
         renderOrderSummary();
