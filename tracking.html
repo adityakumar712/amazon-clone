@@ -88,5 +88,13 @@
         </div>
       </div>
     </div>
+
+    <script>
+      //URL is built in class that. 
+      //window.location.href this will take the url from the top of the browser.
+    const url = new URL(window.location.href);
+    console.log(url.searchParams.get('orderId'));
+    console.log(url.searchParams.get('productId'));
+    </script>
   </body>
 </html>
