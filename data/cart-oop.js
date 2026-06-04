@@ -131,8 +131,8 @@ function Cart(localStorageKey ){
 
 
 
-console.log(cart);
-console.log(businessCart);
+// console.log(cart);
+// console.log(businessCart);
 
 
 

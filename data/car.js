@@ -12,7 +12,7 @@ class Car{
 
     displayInfo(){
         const trunkStatus = this.isTrunkOpen ? 'open' : 'close';
-        console.log(`${this.#brand} , ${this.model} , speed: ${this.speed} km/h , Trunk:${trunkStatus}`);
+        // console.log(`${this.#brand} , ${this.model} , speed: ${this.speed} km/h , Trunk:${trunkStatus}`);
     }
 
 
@@ -57,8 +57,8 @@ const car2 = new Car(
     }
 );
 
-console.log(car1);
-console.log(car2);
+// console.log(car1);
+// console.log(car2);
 
 
 car1.break;
@@ -99,11 +99,11 @@ class RaceCar extends Car{
     }
 
     openTrunk(){
-        console.log('Race car do not have a trunk');
+        // console.log('Race car do not have a trunk');
     }
 
     closeTrunk(){
-        console.log('Race car do not have have a trunk');
+        // console.log('Race car do not have have a trunk');
     }
 }
 

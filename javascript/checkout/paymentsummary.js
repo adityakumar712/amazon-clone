@@ -74,25 +74,30 @@ export function renderPaymentSummary(){
     document.querySelector('.js-place-order-button').addEventListener
     ('click' , async()=>{
 
-      try{
-        const response = await fetch('https://supersimplebackend.dev/orders' ,{
-        method:'POST',
-        headers:{
-          'content-type' : 'application/json'
-        },
-        body:JSON.stringify({
-          cart:cart
-        }) 
-      })
+          const response = await fetch(
+        'https://supersimplebackend.dev/orders',
+        {
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+          },
+          body:JSON.stringify({
+            cart:cart
+          })
+        }
+      );
 
-        const order =  await response.json();  //this is also promise(response).
-        addOrder(order);
-
-         //now we check on the console orders stored on localstorage(ordersummary).
-
-      }catch(error){
-          console.log('unexpected Error . try again later');
+      if (!response.ok) {
+        const error = await response.json();
+        console.error('Backend Error:', error);
+        return;
       }
+
+      const order = await response.json();
+
+      console.log('Valid Order:', order);
+
+      addOrder(order);
       
       window.location.href='orders.html';
     
